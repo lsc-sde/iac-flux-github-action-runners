@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: datascience-notebook
+spec:
+  targetNamespace: github-runner
+  releaseName: datascience-notebook
+  chart:
+    spec:
+      chart: github-actions-runner
+      sourceRef:
+        kind: HelmRepository
+        name: github-runner
+        namespace: github-runner
+  interval: 5m0s
+  install:
+    remediation:
+      retries: 10
+  values:
+    github:
+      repository: docker-datascience-notebook
+
+    runner:
+      scope: repo
+      labels: linux,datascience-notebook
+
+    accessToken:
+      secretName: pat-token
+      secretKey: token
