@@ -33,6 +33,10 @@ spec:
       scope: repo
       labels: linux,datascience-notebook
 
+      replicas:
+        minimum: 0
+        maximum: 5
+
     accessToken:
       secretName: pat-token
       secretKey: token
