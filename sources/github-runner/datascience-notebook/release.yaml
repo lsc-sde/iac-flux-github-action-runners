@@ -3,7 +3,7 @@ kind: HelmRelease
 metadata:
   name: datascience-notebook
   annotations:
-    lsc-sde.nhs.uk/definitionVersion: "1.0.3"
+    lsc-sde.nhs.uk/definitionVersion: "1.0.4"
 spec:
   targetNamespace: github-runner
   releaseName: datascience-notebook
