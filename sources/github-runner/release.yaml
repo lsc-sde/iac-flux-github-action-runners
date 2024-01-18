@@ -38,6 +38,14 @@ spec:
         maximum: 5
 
 
+      resources:
+        limits:
+          cpu: 2
+        
+        requests:
+          cpu: 2
+          memory: 256Mi
+
       affinity:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
