@@ -11,10 +11,8 @@ runner:
       memory: 2Gi
     
     requests:
+      cpu: 100m
       memory: 256Mi
-
-  nodeSelector:
-    lsc-sde.nhs.uk/nodeType: github-runner
 
 accessToken:
   secretName: pat-token
