@@ -37,6 +37,17 @@ spec:
         minimum: 0
         maximum: 5
 
+
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: lsc-sde.nhs.uk/nodeType
+                operator: In
+                values:
+                - github-runner
+
     accessToken:
       secretName: pat-token
       secretKey: token
