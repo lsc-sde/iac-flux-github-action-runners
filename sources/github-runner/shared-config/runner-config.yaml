@@ -14,7 +14,7 @@ runner:
       cpu: 2
       memory: 256Mi
 
-  nodeSelector::
+  nodeSelector:
     lsc-sde.nhs.uk/nodeType: github-runner
 
 accessToken:
