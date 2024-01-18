@@ -1,3 +1,9 @@
 runner:
   nodeSelector:
     lsc-sde.nhs.uk/nodeType: github-runner
+    
+  tolerations:
+  - key: "sdeAppType"
+    operator: "Equal"
+    value: "github-runner"
+    effect: "NoSchedule"
