@@ -14,15 +14,8 @@ runner:
       cpu: 2
       memory: 256Mi
 
-  affinity:
-    podAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchExpressions:
-          - key: lsc-sde.nhs.uk/nodeType
-            operator: In
-            values:
-            - github-runner
+  nodeSelector::
+    lsc-sde.nhs.uk/nodeType: github-runner
 
 accessToken:
   secretName: pat-token
