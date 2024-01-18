@@ -7,5 +7,3 @@ configMapGenerator:
       - values.yaml=runner-config.yaml
 generatorOptions:
   disableNameSuffixHash: true
-resources:
-  - release.yaml
