@@ -7,11 +7,11 @@ runner:
 
   resources:
     limits:
-      cpu: 1
+      cpu: 100m
       memory: 2Gi
     
     requests:
-      cpu: 100m
+      cpu: 10m
       memory: 256Mi
 
 accessToken:
