@@ -7,7 +7,6 @@ runner:
 
   resources:
     limits:
-      cpu: 100m
       memory: 2Gi
     
     requests:
