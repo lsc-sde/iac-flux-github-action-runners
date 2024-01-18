@@ -1,0 +1,29 @@
+runner:
+  scope: repo
+
+  replicas:
+    minimum: 0
+    maximum: 5
+
+  resources:
+    limits:
+      cpu: 2
+      memory: 2Gi
+    
+    requests:
+      cpu: 2
+      memory: 256Mi
+
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: lsc-sde.nhs.uk/nodeType
+            operator: In
+            values:
+            - github-runner
+
+accessToken:
+  secretName: pat-token
+  secretKey: token

@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: datascience-notebook
+  annotations:
+    lsc-sde.nhs.uk/definitionVersion: "1.0.1"
+spec:
+  targetNamespace: github-runner
+  releaseName: datascience-notebook
+  chart:
+    spec:
+      chart: github-actions-runner
+      sourceRef:
+        kind: HelmRepository
+        name: github-runner
+        namespace: github-runner
+  interval: 5m0s
+  install:
+    remediation:
+      retries: -1
+    disableWait: true
+    disableWaitForJobs: true
+  upgrade:
+    remediation:
+      retries: -1
+    disableWait: true
+    disableWaitForJobs: true
+  valuesFrom:
+  # Shared Config
+  - kind: ConfigMap
+    name: datascience-notebook
+
+  - kind: ConfigMap
+    name: shared-config

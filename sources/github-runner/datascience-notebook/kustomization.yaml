@@ -2,12 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: github-runner
 configMapGenerator:
-  - name: environment-config
+  - name: datascience-notebook
     files:
-      - values.yaml=configs.yaml
+      - values.yaml=runner-config.yaml
 generatorOptions:
   disableNameSuffixHash: true
 resources:
-  - repository.yaml
-  - shared-config
-  - datascience-notebook
+  - release.yaml
