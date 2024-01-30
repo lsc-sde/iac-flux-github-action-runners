@@ -7,3 +7,16 @@ runner:
     operator: "Equal"
     value: "github-runner"
     effect: "NoSchedule"
+  workVolume:
+  - name: workdir
+    ephemeral:
+      volumeClaimTemplate:
+        metadata:
+          labels:
+            type: workdir
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: "managed"
+          resources:
+            requests:
+              storage: 100Gi
