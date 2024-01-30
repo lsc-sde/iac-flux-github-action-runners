@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: github-runner
 resources:
   - repository.yaml
-  - shared-config
-  - datascience-notebook
+  - runners

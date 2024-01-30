@@ -1,5 +1,9 @@
+github:
+  scope: org
+  org: lsc-sde
+
 runner:
-  scope: repo
+  labels: linux,lsc-sde
 
   replicas:
     minimum: 0

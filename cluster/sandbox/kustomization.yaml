@@ -4,7 +4,7 @@ namespace: github-runner
 configMapGenerator:
   - name: environment-config
     files:
-      - values.yaml=runner-config.yaml
+      - values.yaml=environment-config.yaml
 generatorOptions:
   disableNameSuffixHash: true
 resources:

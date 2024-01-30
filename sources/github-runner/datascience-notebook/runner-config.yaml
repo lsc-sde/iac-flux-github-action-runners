@@ -1,5 +1,0 @@
-github:
-  repository: docker-datascience-notebook
-
-runner:
-  labels: linux,datascience-notebook
