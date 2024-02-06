@@ -15,6 +15,7 @@ replacements:
       name: cluster-config
       namespace: lscsde-config
       kind: ConfigMap
+      version: v1
       fieldPath: data.AZURE_CLIENT_ID
     targets:
     - select:
@@ -26,6 +27,7 @@ replacements:
       name: cluster-config
       namespace: lscsde-config
       kind: ConfigMap
+      version: v1
       fieldPath: data.AZURE_KEYVAULT_NAME
     targets:
     - select:
@@ -43,6 +45,7 @@ replacements:
       name: cluster-config
       namespace: lscsde-config
       kind: ConfigMap
+      version: v1
       fieldPath: data.AZURE_TENANT_ID
     targets:
     - select:
