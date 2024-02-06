@@ -1,4 +1,4 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1
 kind: Kustomization
 namespace: github-runner
 configMapGenerator:
@@ -10,8 +10,7 @@ generatorOptions:
 resources:
   - secret.yaml
   - secret-job.yaml
-postBuild:
-  substituteFrom:
-    - kind: ConfigMap
-      name: cluster-config
-      namespace: lscsde-config
+substituteFrom:
+  - kind: ConfigMap
+    name: cluster-config
+    namespace: lscsde-config
