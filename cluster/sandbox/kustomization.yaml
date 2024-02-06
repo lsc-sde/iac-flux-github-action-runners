@@ -12,6 +12,7 @@ resources:
   - secret-job.yaml
 replacements:
   - source:
+      apiVersion: ""
       name: cluster-config
       namespace: lscsde-config
       kind: ConfigMap
@@ -24,6 +25,7 @@ replacements:
       fieldPaths:
       - spec.parameters.userAssignedIdentityID
   - source:
+      apiVersion: ""
       name: cluster-config
       namespace: lscsde-config
       kind: ConfigMap
@@ -35,13 +37,8 @@ replacements:
         name: pat-token-sync
       fieldPaths:
       - spec.parameters.keyvaultName
-    targets:
-    - select:
-        kind: SecretProviderClass
-        name: pat-token-sync
-      fieldPaths:
-      - spec.parameters.userAssignedIdentityID
   - source:
+      apiVersion: ""
       name: cluster-config
       namespace: lscsde-config
       kind: ConfigMap
