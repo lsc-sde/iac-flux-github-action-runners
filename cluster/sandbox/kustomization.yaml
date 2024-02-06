@@ -33,10 +33,6 @@ replacements:
         name: pat-token-sync
       fieldPaths:
       - spec.parameters.keyvaultName
-      name: cluster-config
-      namespace: lscsde-config
-      kind: ConfigMap
-      fieldPath: data.AZURE_CLIENT_ID
     targets:
     - select:
         kind: SecretProviderClass
