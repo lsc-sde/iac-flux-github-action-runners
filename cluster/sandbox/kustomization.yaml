@@ -10,3 +10,47 @@ generatorOptions:
 resources:
   - secret.yaml
   - secret-job.yaml
+replacements:
+  - source:
+      name: cluster-config
+      namespace: lscsde-config
+      kind: ConfigMap
+      fieldPath: data.AZURE_CLIENT_ID
+    targets:
+    - select:
+        kind: SecretProviderClass
+        name: pat-token-sync
+      fieldPaths:
+      - spec.parameters.userAssignedIdentityID
+  - source:
+      name: cluster-config
+      namespace: lscsde-config
+      kind: ConfigMap
+      fieldPath: data.AZURE_KEYVAULT_NAME
+    targets:
+    - select:
+        kind: SecretProviderClass
+        name: pat-token-sync
+      fieldPaths:
+      - spec.parameters.keyvaultName
+      name: cluster-config
+      namespace: lscsde-config
+      kind: ConfigMap
+      fieldPath: data.AZURE_CLIENT_ID
+    targets:
+    - select:
+        kind: SecretProviderClass
+        name: pat-token-sync
+      fieldPaths:
+      - spec.parameters.userAssignedIdentityID
+  - source:
+      name: cluster-config
+      namespace: lscsde-config
+      kind: ConfigMap
+      fieldPath: data.AZURE_TENANT_ID
+    targets:
+    - select:
+        kind: SecretProviderClass
+        name: pat-token-sync
+      fieldPaths:
+      - spec.parameters.tenantId
