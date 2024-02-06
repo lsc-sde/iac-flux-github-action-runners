@@ -10,9 +10,8 @@ generatorOptions:
 resources:
   - secret.yaml
   - secret-job.yaml
-spec:
-  postBuild:
-    substituteFrom:
-      - kind: ConfigMap
-        name: cluster-config
-        namespace: lscsde-config
+postBuild:
+  substituteFrom:
+    - kind: ConfigMap
+      name: cluster-config
+      namespace: lscsde-config
