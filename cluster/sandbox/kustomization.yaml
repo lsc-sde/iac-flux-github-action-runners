@@ -10,17 +10,3 @@ generatorOptions:
 resources:
   - secret.yaml
   - secret-job.yaml
-replacements:
-  - source:
-      kind: ConfigMap
-      name: cluster-config
-      namespace: lscsde-config
-      fieldpath: data.azure_client_id
-    targets:
-      - select: 
-          group: secrets-store.csi.x-k8s.io
-          version: v1
-          kind: SecretProviderClass
-          name: pat-token-sync
-        fieldPaths:
-          - spec.parameters.userAssignedIdentityID
