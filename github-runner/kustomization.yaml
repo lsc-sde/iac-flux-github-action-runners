@@ -5,6 +5,8 @@ configMapGenerator:
   - name: environment-config
     files:
       - values.yaml=environment-config.yaml
+generatorOptions:
+  disableNameSuffixHash: true
 resources:
   - repository.yaml
   - runners
