@@ -1,0 +1,5 @@
+{
+  "credHelpers": {
+    "lscsdesandboxacr.azurecr.io": "acr-env"
+  }
+}

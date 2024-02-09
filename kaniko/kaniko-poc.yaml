@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: datascience-notebook-poc
+  namespace: kaniko
+spec:
+  containers:
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor:latest
+      args:
+        - "--dockerfile=./Dockerfile"
+        - "--context=git://github.com/lsc-sde/docker-datascience-notebook.git#refs/heads/main"
+        - "--cache=true" 
+        - "--compressed-caching=false"
+        - "--use-new-run" 
+        - "--cleanup"
+        - "--destination=lscsdesandboxacr.azurecr.io/datascience/datascience-notebook:kaniko-poc"
+      env:
+        - name: AZURE_CLIENT_ID
+          value: 009297ad-7a13-4d98-91d0-46f68c815882
+        
+        - name: AZURE_TENANT_ID
+          value: f12f0279-8a84-4068-8322-7a6fb0f839b8
+
+      volumeMounts:
+        - name: kaniko-config
+          mountPath: /kaniko/.docker
+          readOnly: true
+  restartPolicy: Never
+  volumes:
+    - name: kaniko-config
+      projected:
+        sources:
+          - secret:
+              name: kaniko-config
+              items: 
+                - key: config.json
+                  path: config.json
