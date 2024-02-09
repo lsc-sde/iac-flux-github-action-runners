@@ -10,6 +10,7 @@ spec:
   chart:
     spec:
       chart: github-actions-runner
+      version: ${github_runner_chart_version}
       sourceRef:
         kind: HelmRepository
         name: github-runner
