@@ -3,7 +3,7 @@ kind: HelmRelease
 metadata:
   name: runners
   annotations:
-    lsc-sde.nhs.uk/definitionVersion: "1.0.7"
+    xlscsde.nhs.uk/flux-branch: "${github_runner_branch}"
 spec:
   targetNamespace: github-runner
   releaseName: runners

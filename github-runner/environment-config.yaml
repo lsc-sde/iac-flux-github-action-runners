@@ -6,7 +6,7 @@ runner:
   tolerations:
   - key: "sdeAppType"
     operator: "Equal"
-    value: "github-runner"
+    value: "gitops"
     effect: "NoSchedule"
   workVolume:
   - name: workdir
