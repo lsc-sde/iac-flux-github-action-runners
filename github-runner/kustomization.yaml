@@ -11,4 +11,3 @@ resources:
   - repository.yaml
   - runners
   - secret.yaml
-  - secret-job.yaml
