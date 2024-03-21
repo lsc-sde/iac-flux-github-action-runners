@@ -32,3 +32,6 @@ spec:
 
   - kind: ConfigMap
     name: environment-config
+  dependsOn:
+  - name: keda
+    namespace: keda
